@@ -1,0 +1,8 @@
+[build]
+publish = "src/"
+
+[[redirects]]
+from = "/:splat"
+to = "https://kirbodev.com/:splat"
+status = 200
+force = true
