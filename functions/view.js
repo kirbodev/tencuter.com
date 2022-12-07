@@ -4,7 +4,7 @@ const toHTML = require("../tools/HTMLImage.js");
 module.exports.handler = (event, context, callback) => {
   callback(null, {
     statusCode: 200,
-    body: toHTML("https://i.ibb.co/9GSjhyR/So-Cute-Main.png"),
+    body: toHTML("https://tencuter.com/assets/SoCuteMain.png"),
   });
   // const gif = event.path.split("/").pop();
   // axios.get(`https://tenor.com/view/${gif}`)
