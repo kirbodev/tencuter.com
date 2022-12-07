@@ -11,3 +11,11 @@ functions = "functions/"
 [[redirects]]
 from = "/view/:splat"
 to = "/.netlify/functions/view/:splat"
+
+[[redirects]]
+from = "/dog/:splat"
+to = "/.netlify/functions/dog/:splat"
+
+[[redirects]]
+from = "/cat/:splat"
+to = "/.netlify/functions/cat/:splat"
