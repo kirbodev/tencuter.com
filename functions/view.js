@@ -3,7 +3,7 @@ const fetch = require("isomorphic-fetch");
 // Get splat after /view
 module.exports.handler = async (event, context, callback) => {
   try {
-    const result = await fetch("https://i.ibb.co/vkG2gV4/So-Cute-Main.png");
+    const result = await fetch("https://i.ibb.co/thVq61P/So-Cute-Main.png");
     const buffer = await result.buffer();
 
     callback(null, {
