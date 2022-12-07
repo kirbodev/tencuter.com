@@ -1,8 +1,13 @@
 [build]
 publish = "src/"
+functions = "functions/"
+
+# [[redirects]]
+# from = "/:splat"
+# to = "https://kirbodev.com/:splat"
+# status = 200
+# force = true
 
 [[redirects]]
-from = "/:splat"
-to = "https://kirbodev.com/:splat"
-status = 200
-force = true
+from = "/view/:splat"
+to = "/.netlify/functions/view/:splat"
