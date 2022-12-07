@@ -1,11 +1,25 @@
-
+const fetch = require("isomorphic-fetch");
 
 // Get splat after /view
-module.exports.handler = (event, context, callback) => {
-  callback(null, {
-    statusCode: 200,
-    body: "https://tencuter.com/assets/SoCuteMain.png",
-  });
+module.exports.handler = async (event, context, callback) => {
+  try {
+    const result = await fetch("https://i.ibb.co/9GSjhyR/So-Cute-Main.png");
+    const buffer = await result.buffer();
+
+    callback(null, {
+        statusCode: 200,
+        headers: {
+            "Content-Type": "image/png",
+        },
+        body: buffer.toString("base64"),
+        isBase64Encoded: true,
+    });
+  } catch (e) {
+    callback(null, {
+        statusCode: 500,
+        body: `Something went wrong: ${e}`
+    })
+  }
   // const gif = event.path.split("/").pop();
   // axios.get(`https://tenor.com/view/${gif}`)
   //     .then(res => {
