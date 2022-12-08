@@ -19,3 +19,15 @@ to = "/.netlify/functions/dog/:splat"
 [[redirects]]
 from = "/cat/:splat"
 to = "/.netlify/functions/cat/:splat"
+
+[[redirects]]
+from = "/sex/:splat"
+to = "/.netlify/functions/sex/:splat"
+
+[[redirects]]
+from = "/s*x/:splat"
+to = "/sex/:splat"
+
+[[redirects]]
+from = "/deepfry/:splat"
+to = "/.netlify/functions/deepfry/:splat"
