@@ -1,3 +1,5 @@
+// Use this to show the link on the image preview
+
 function ImageAsHTML(imageURL) {
     var html = `<html>
     <head>
