@@ -23,3 +23,7 @@ to = "/.netlify/functions/cat/:splat"
 [[redirects]]
 from = "/deepfry/:splat"
 to = "/.netlify/functions/deepfry/:splat"
+
+[[redirects]]
+from = "/what/:splat"
+to = "/.netlify/functions/what/:splat"
