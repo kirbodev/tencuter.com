@@ -1,5 +1,3 @@
-const fetch = require("isomorphic-fetch");
-
 // Get splat after /view
 module.exports.handler = async (event, context, callback) => {
   try {

@@ -27,3 +27,11 @@ to = "/.netlify/functions/deepfry/:splat"
 [[redirects]]
 from = "/what/:splat"
 to = "/.netlify/functions/what/:splat"
+
+[[redirects]]
+from = "/caption/:splat"
+to = "/.netlify/functions/caption/:splat"
+
+[[redirects]]
+from = "/meme/:splat"
+to = "/.netlify/functions/meme/:splat"
