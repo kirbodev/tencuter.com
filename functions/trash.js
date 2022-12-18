@@ -11,7 +11,9 @@ module.exports.handler = async (event, context, callback) => {
     const result = await fetch(resultGif);
     const buffer = await result.buffer();
     const image = await jimp.read(buffer);
-    const bg = await jimp.read(path.join(__dirname, "..", "assets", "img", "trash.png"));
+    const bgFetch = await fetch("https://tencuter.com/assets/img/trash.png");
+    const bgBuffer = await bgFetch.buffer();
+    const bg = await jimp.read(bgBuffer);
     image.resize(195, 195);
     bg.composite(image, 120, 135);
     const data = await bg.getBufferAsync(jimp.MIME_PNG);
