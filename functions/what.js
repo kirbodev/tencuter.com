@@ -9,7 +9,7 @@ module.exports.handler = async (event, context, callback) => {
       headers: {
         "Content-Type": "image/png",
       },
-      body: data.toString("base64"),
+      body: imageData.toString("base64"),
       isBase64Encoded: true,
     });
   } catch (e) {
