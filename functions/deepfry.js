@@ -11,8 +11,8 @@ module.exports.handler = async (event, context, callback) => {
     const result = await fetch(resultGif);
     const buffer = await result.buffer();
     const image = await jimp.read(buffer);
-    // Resize to 1080, 1080, pixelate slightly, set contrast to 0.95 and posterize to 8. Then, sharpen the image. Then, make it very low quality. Then, make it very high quality.
-    image.resize(1080, 1080).pixelate(2).contrast(0.95).posterize(8).quality(1).quality(100);
+    // Pixelate slightly, set contrast to 0.95 and posterize to 8. Then, sharpen the image. Then, make it very low quality. Then, make it very high quality.
+    image.pixelate(2).contrast(0.95).posterize(8).quality(1).quality(100);
     const data = await image.getBufferAsync(jimp.MIME_JPEG);
 
     callback(null, {

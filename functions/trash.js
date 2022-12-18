@@ -1,7 +1,5 @@
-const sharp = require('sharp');
 const jimp = require('jimp');
 const fetch = require("isomorphic-fetch");
-const path = require('path');
 
 module.exports.handler = async (event, context, callback) => {
     const gif = event.path.split("/").pop();
