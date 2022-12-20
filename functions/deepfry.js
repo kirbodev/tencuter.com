@@ -25,7 +25,7 @@ module.exports.handler = async (event, context, callback) => {
     callback(null, {
       statusCode: 200,
       headers: {
-        "Content-Type": "image/jpeg",
+        "Content-Type": "image/gif",
       },
       body: data.toString("base64"),
       isBase64Encoded: true,
