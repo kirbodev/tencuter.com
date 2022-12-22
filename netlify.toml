@@ -29,6 +29,10 @@ from = "/what/:splat"
 to = "/.netlify/functions/what/:splat"
 
 [[redirects]]
+from = "/caption/:splat/:id"
+to = "/.netlify/functions/caption/:splat/:id"
+
+[[redirects]]
 from = "/caption/:splat"
 to = "/.netlify/functions/caption/:splat"
 
