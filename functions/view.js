@@ -10,9 +10,13 @@ module.exports.handler = async (event, context, callback) => {
         isBase64Encoded: true,
     });
   } catch (e) {
+    const imageAsHTML = require("../tools/HTMLImage");
     callback(null, {
-        statusCode: 500,
-        body: `Something went wrong: ${e}`
-    })
+      statusCode: 500,
+      headers: {
+        "Content-Type": "text/html",
+      },
+      body: imageAsHTML("https://tencuter.com/assets/img/500.png"),
+    });
   }
 };

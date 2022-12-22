@@ -4,37 +4,41 @@ const gifInfo = require("gif-info");
 
 module.exports.handler = async (event, context, callback) => {
   try {
-  // Deepfry the image
-  const gif = event.path.split("/").pop();
-  const gifurl = await fetch(`https://tenor.com/view/${gif}`);
-  const resultText = await gifurl.text();
-  const resultGif = resultText.match(
-    /https:\/\/media.tenor.com\/[a-z0-9]+/i
-  )[0];
-  const result = await fetch(resultGif);
-  const buffer = await result.buffer();
-  const arrayBuffer = new Uint8Array(buffer).buffer;
-  const info = gifInfo(arrayBuffer);
-  const fps = info.images.length / (info.duration / 1000);
+    // Deepfry the image
+    const gif = event.path.split("/").pop();
+    const gifurl = await fetch(`https://tenor.com/view/${gif}`);
+    const resultText = await gifurl.text();
+    const resultGif = resultText.match(
+      /https:\/\/media.tenor.com\/[a-z0-9]+/i
+    )[0];
+    const result = await fetch(resultGif);
+    const buffer = await result.buffer();
+    const arrayBuffer = new Uint8Array(buffer).buffer;
+    const info = gifInfo(arrayBuffer);
+    const fps = info.images.length / (info.duration / 1000);
 
-  cgif(buffer, deepfry, {
-    optimiser: true,
-    fps: fps,
-    quality: 50,
-  }).then((data) => {
-    callback(null, {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "image/gif",
-      },
-      body: data.toString("base64"),
-      isBase64Encoded: true,
+    cgif(buffer, deepfry, {
+      optimiser: true,
+      fps: fps,
+      quality: 50,
+    }).then((data) => {
+      callback(null, {
+        statusCode: 200,
+        headers: {
+          "Content-Type": "image/gif",
+        },
+        body: data.toString("base64"),
+        isBase64Encoded: true,
+      });
     });
-  });
   } catch (e) {
+    const imageAsHTML = require("../tools/HTMLImage");
     callback(null, {
       statusCode: 500,
-      body: `Something went wrong: ${e}`,
+      headers: {
+        "Content-Type": "text/html",
+      },
+      body: imageAsHTML("https://tencuter.com/assets/img/500.png"),
     });
   }
 };

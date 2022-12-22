@@ -8,9 +8,22 @@ module.exports.handler = async (event, context, callback) => {
     const captionText = event.path.split("/")[4];
     const gifurl = await fetch(`https://tenor.com/view/${gif}`);
     const resultText = await gifurl.text();
-    const resultGif = resultText.match(
+    const resultGifList = resultText.match(
       /https:\/\/media.tenor.com\/[a-z0-9]+/i
-    )[0];
+    );
+    if (!resultGifList) {
+      const notFound = await fetch("https://tencuter.com/assets/img/404.png");
+      const buffer = await notFound.buffer();
+      callback(null, {
+        statusCode: 404,
+        headers: {
+          "Content-Type": "image/png",
+        },
+        body: buffer.toString("base64"),
+        isBase64Encoded: true,
+      });
+    }
+    const resultGif = resultGifList[0];
     const result = await fetch(resultGif);
     const buffer = await result.buffer();
     const arrayBuffer = new Uint8Array(buffer).buffer;
@@ -40,19 +53,27 @@ module.exports.handler = async (event, context, callback) => {
             const metrics = context.measureText(testLine);
             const testWidth = metrics.width;
             if (testWidth > width && n > 0) {
-              bgY += 35;
-              context.fillStyle = "white";
-              context.fillRect(0, 0, width, bgY);
-              context.fillStyle = "black";
-              context.fillText(line, textX, textY);
-              line = words[n] + " ";
-              textY += 30 + 5;
+              if (bgY < 75) {
+                bgY += 35;
+                context.fillStyle = "white";
+                context.fillRect(0, bgY - 40, width, bgY - 35);
+                context.fillStyle = "black";
+                context.fillText(line, textX, textY, width);
+                console.log(
+                  "line: " + line + " textY: " + textY + " bgY: " + bgY
+                );
+                line = words[n] + " ";
+                textY += 30 + 5;
+              }
             } else {
               line = testLine;
             }
           }
+          if (bgY > 75) return;
+          context.fillStyle = "black";
           context.fillText(line, textX, textY, width);
         } else {
+          context.fillStyle = "black";
           context.fillText(text, textX, textY, width);
         }
       },
@@ -72,9 +93,13 @@ module.exports.handler = async (event, context, callback) => {
       });
     });
   } catch (e) {
+    const imageAsHTML = require("../tools/HTMLImage");
     callback(null, {
       statusCode: 500,
-      body: `Something went wrong: ${e}`,
+      headers: {
+        "Content-Type": "text/html",
+      },
+      body: imageAsHTML("https://tencuter.com/assets/img/500.png"),
     });
   }
 };
