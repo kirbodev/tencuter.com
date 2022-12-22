@@ -2,13 +2,6 @@ const fetch = require("isomorphic-fetch");
 const cgif = require("canvas-gif");
 const gifinfo = require("gif-info");
 
-// Install Futura Extra Black Condensed font to your system using install-fonts package
-const font = require("install-fonts");
-font({
-  scope: "system",
-  recurseDirs: "./functions/fonts"
-})
-
 module.exports.handler = async (event, context, callback) => {
   try {
     const gif = event.path.split("/")[5];
