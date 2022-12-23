@@ -96,15 +96,16 @@ module.exports.handler = async (event, context, callback) => {
           body: buffer.toString("base64"),
           isBase64Encoded: true,
         });
+      } else {
+        callback(null, {
+          statusCode: 200,
+          body: image.toString("base64"),
+          headers: {
+            "Content-Type": "image/gif",
+          },
+          isBase64Encoded: true,
+        });
       }
-      callback(null, {
-        statusCode: 200,
-        body: image.toString("base64"),
-        headers: {
-          "Content-Type": "image/gif",
-        },
-        isBase64Encoded: true,
-      });
     });
   } catch (e) {
     const imageAsHTML = require("../tools/HTMLImage");
