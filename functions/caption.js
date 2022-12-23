@@ -81,7 +81,6 @@ module.exports.handler = async (event, context, callback) => {
         optimiser: true,
         fps: fps,
         quality: 50,
-        algorithm: "octree",
       }
     ).then(async (image) => {
       // Check if its bigger than 6MB
