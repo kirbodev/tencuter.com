@@ -98,10 +98,10 @@ module.exports.handler = async (event, context, callback) => {
       } else {
         callback(null, {
           statusCode: 200,
-          body: image.toString("base64"),
           headers: {
             "Content-Type": "image/gif",
           },
+          body: image.toString("base64"),
           isBase64Encoded: true,
         });
       }

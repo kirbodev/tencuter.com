@@ -21,12 +21,9 @@
     "body-parser": "^1.20.1",
     "canvas": "^2.10.2",
     "canvas-gif": "^1.0.3",
-    "express": "^4.18.2",
     "gif-info": "^1.0.1",
-    "install-fonts": "^0.0.3",
     "isomorphic-fetch": "^3.0.0",
     "jimp": "^0.16.2",
-    "serverless-http": "^3.1.0",
     "sharp": "^0.31.2",
     "zlib": "^1.0.5"
   }

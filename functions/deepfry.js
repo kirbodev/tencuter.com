@@ -8,9 +8,22 @@ module.exports.handler = async (event, context, callback) => {
     const gif = event.path.split("/").pop();
     const gifurl = await fetch(`https://tenor.com/view/${gif}`);
     const resultText = await gifurl.text();
-    const resultGif = resultText.match(
+    const resultGifList = resultText.match(
       /https:\/\/media.tenor.com\/[a-z0-9]+/i
-    )[0];
+    );
+    if (!resultGifList) {
+      const notFound = await fetch("https://tencuter.com/assets/img/404.png");
+      const buffer = await notFound.buffer();
+      callback(null, {
+        statusCode: 404,
+        headers: {
+          "Content-Type": "image/png",
+        },
+        body: buffer.toString("base64"),
+        isBase64Encoded: true,
+      });
+    }
+    const resultGif = resultGifList[0];
     const result = await fetch(resultGif);
     const buffer = await result.buffer();
     const arrayBuffer = new Uint8Array(buffer).buffer;

@@ -5,7 +5,7 @@
  * @param {Boolean} headonly
  * @returns {String} string
  */
-function ImageAsHTML(imageURL, base64 = false, headonly = false) {
+function ImageAsHTML(imageURL, base64 = false, headonly = false, issues = false) {
   if (base64) {
     imageURL = `data:image/png;base64,${imageURL}`;
   }
@@ -14,8 +14,8 @@ function ImageAsHTML(imageURL, base64 = false, headonly = false) {
         <meta name="twitter:image" content="${imageURL}" />
         <meta name="twitter:card" content="summary_large_image" />
     </head>
-    <body>
-        <img src="${imageURL}" />
+    <body style="margin:0;">
+        <img src="${imageURL}" style="width: min(100vw, 100vh);" />
     </body>
     </html>`;
   if (headonly) {
@@ -23,6 +23,18 @@ function ImageAsHTML(imageURL, base64 = false, headonly = false) {
         <meta name="twitter:image" content="${imageURL}" />
         <meta name="twitter:card" content="summary_large_image" />
         </head>`;
+  }
+  if (issues) {
+    html = `<html>
+    <head>
+        <meta name="twitter:image" content="${imageURL}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta http-equiv="refresh" content="0; url=https://github.com/kirbodev/tencuter.com/issues" />
+    </head>
+    <body style="margin:0;">
+        <img src="${imageURL}" style="width: min(100vw, 100vh);" />
+    </body>
+    </html>`
   }
   return html;
 }

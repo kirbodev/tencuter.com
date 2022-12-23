@@ -44,10 +44,6 @@ to = "/.netlify/functions/meme/:splat"
 from = "/pe/:splat"
 to = "/.netlify/functions/pe/:splat"
 
-[[redirects]]
-from = "/trash/:splat"
-to = "/.netlify/functions/trash/:splat"
-
 [[headers]]
 for = "/deepfry/*"
 [headers.values]
