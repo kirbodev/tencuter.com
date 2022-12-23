@@ -81,8 +81,22 @@ module.exports.handler = async (event, context, callback) => {
         optimiser: true,
         fps: fps,
         quality: 50,
+        algorithm: "octree",
       }
-    ).then((image) => {
+    ).then(async (image) => {
+      // Check if its bigger than 6MB
+      if (image.length > 6291456) {
+        const tooBig = await fetch("https://tencuter.com/assets/img/413.png");
+        const buffer = await tooBig.buffer();
+        callback(null, {
+          statusCode: 413,
+          headers: {
+            "Content-Type": "image/png",
+          },
+          body: buffer.toString("base64"),
+          isBase64Encoded: true,
+        });
+      }
       callback(null, {
         statusCode: 200,
         body: image.toString("base64"),
