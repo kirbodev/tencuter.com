@@ -64,6 +64,10 @@ Returns your gif with the text you provided as a caption.
 Returns your gif with the "Are you sure you want to delete this?" overlay.
 ### s/view/what
 Returns a short description of what s/o/cute is.
+### s/view/blurple
+Returns a blurpified version of your gif. (Thanks, [Blurple Project](https://github.com/project-blurple))
+### s/view/fox
+Returns a random picture of a fox.
 
 ---
 
@@ -74,10 +78,6 @@ These commands are still being worked on, are not released and may not be releas
 Returns your gif with a fisheye effect.
 ### s/view/blur
 Returns your gif with a blur effect.
-### s/view/fox
-Returns a random picture of a fox.
-### s/view/blurple
-Returns a blurpified version of your gif. (Thanks, [Blurple Project](https://github.com/project-blurple))
 
 #### Ask for a command in issues or submit your own with a pull request! 
 

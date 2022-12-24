@@ -3,9 +3,9 @@ const fetch = require("node-fetch");
 module.exports.handler = async (event, context, callback) => {
   try {
     // Get a random dog image
-    const result1 = await fetch("https://cataas.com/cat?json=true");
+    const result1 = await fetch("https://randomfox.ca/floof/");
     const resultURL = await result1.json();
-    const result = await fetch(`https://cataas.com${resultURL.url}`);
+    const result = await fetch(resultURL.image);
     const buffer = await result.buffer();
 
     callback(null, {
