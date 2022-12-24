@@ -31,21 +31,12 @@ https://tencuter.com/view/lol-haha-so-funny-lmao-gif-22433935
 ```
 ---
 ### Explanation
-<div style="display:flex;">
-<div style="flex:1; text-align:center;">
-    <h2>s/</h2>
-    This means "substitute", aka the edit command.
-</div>
-<div style="flex:1; text-align:center;">
-    <h2>o/</h2>
-    This means the part that should be edited is "o".
-</div>
-<div style="flex:1; text-align:center;">
-    <h2>cute</h2>
-    This is the part that "o" should be replaced with.
-</div>
-</div>   
-<strong>So:</strong>   
+
+| s/ | o/ | cute |
+| --- | --- | --- |
+| This means "substitute", aka the edit command. | This means the part that should be edited is "o". | This is the part that "o" should be replaced with. |
+
+**So:**
 
 ```tenor.com``` -> ```tencuter.com```
 
