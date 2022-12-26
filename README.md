@@ -52,30 +52,30 @@ The initial command. Needed to run any other command.
 Returns a random picture of a dog.
 ### s/view/cat
 Returns a random picture of a cat.
+### s/view/fox
+Returns a random picture of a fox.
 ### s/view/pe
 Returns the one and only pe.
 ### s/view/meme
 Returns a random meme from r/memes.
 ### s/view/deepfry
 Returns a deepfried version of your gif.
+### s/view/fisheye
+Returns your gif with a fisheye effect. 
 ### s/view/caption/\[text]
 Returns your gif with the text you provided as a caption.
 ### s/view/trash
 Returns your gif with the "Are you sure you want to delete this?" overlay.
-### s/view/what
-Returns a short description of what s/o/cute is.
 ### s/view/blurple
 Returns a blurpified version of your gif. (Thanks, [Blurple Project](https://github.com/project-blurple))
-### s/view/fox
-Returns a random picture of a fox.
+### s/view/what
+Returns a short description of what s/o/cute is.
 
 ---
 
 ## Work in progress commands
 
 These commands are still being worked on, are not released and may not be released at all.
-### s/view/fisheye
-Returns your gif with a fisheye effect.
 ### s/view/blur
 Returns your gif with a blur effect.
 
@@ -89,6 +89,7 @@ Returns your gif with a blur effect.
 - [sharp](https://github.com/lovell/sharp) - Fast image manipulation
 - [txnor-server](https://github.com/rebane2001/txnor-server) - The inspiration for this project, aka the discord s/e/x hack
 - [esmBot](https://github.com/esmBot/esmBot) - Further inspiration for this project
+- [NTTS](https://youtube.com/notexttospeech) - Bringing my attention to the discord s/e/x hack
 
 ---
 
