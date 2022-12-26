@@ -44,6 +44,11 @@ to = "/.netlify/functions/meme/:splat"
 from = "/pe/:splat"
 to = "/.netlify/functions/pe/:splat"
 
+[[redirects]]
+from = "https://media.tencuter.com/attachments/:idone/:idtwo/:filename"
+to = "https://tencuter.com/attachments/:idone/:idtwo/:filename"
+force = true
+
 [[headers]]
 for = "/deepfry/*"
 [headers.values]

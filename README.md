@@ -79,6 +79,8 @@ These commands are still being worked on, are not released and may not be releas
 ### s/view/blur
 Returns your gif with a blur effect.
 
+Hopefully I'll be able to buy disccuterdapp.com soon so that this will work with any gif.
+
 #### Ask for a command in issues or submit your own with a pull request! 
 
 ---
