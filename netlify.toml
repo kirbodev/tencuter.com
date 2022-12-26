@@ -45,8 +45,8 @@ from = "/pe/:splat"
 to = "/.netlify/functions/pe/:splat"
 
 [[redirects]]
-from = "https://media.tencuter.com/attachments/:idone/:idtwo/:filename"
-to = "https://tencuter.com/attachments/:idone/:idtwo/:filename"
+from = "https://media.tencuter.com/*"
+to = "https://tencuter.com/*"
 force = true
 
 [[headers]]
