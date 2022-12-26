@@ -44,11 +44,6 @@ to = "/.netlify/functions/meme/:splat"
 from = "/pe/:splat"
 to = "/.netlify/functions/pe/:splat"
 
-[[redirects]]
-from = "https://media.tencuter.com/*"
-to = "https://tencuter.com/*"
-force = true
-
 [[headers]]
 for = "/deepfry/*"
 [headers.values]
