@@ -25,28 +25,50 @@ let colors = [
 
 module.exports.handler = async (event, context, callback) => {
   try {
-    // Deepfry the image
-    const gif = event.path.split("/").pop();
-    const gifurl = await fetch(`https://tenor.com/view/${gif}`);
-    const resultText = await gifurl.text();
-    const resultGifList = resultText.match(
-      /https:\/\/media.tenor.com\/[a-z0-9]+/i
-    );
-    if (!resultGifList) {
-      const notFound = await fetch("https://tencuter.com/assets/img/404.png");
-      const buffer = await notFound.buffer();
-      callback(null, {
-        statusCode: 404,
-        headers: {
-          "Content-Type": "image/png",
-        },
-        body: buffer.toString("base64"),
-        isBase64Encoded: true,
-      });
+    let buffer;
+    if (event.headers.host.split(".")[0] === "media") {
+      // Change media.tencuter.com to media.discordapp.net
+      const media = event.path;
+      const mediaurl = await fetch(`https://media.discordapp.net${media}`);
+      const result = await mediaurl.buffer();
+      if (mediaurl.status === 401 || mediaurl.status === 404 || !result) {
+        const notFound = await fetch("https://tencuter.com/assets/img/404.png");
+        const buffer = await notFound.buffer();
+        callback(null, {
+          statusCode: 404,
+          headers: {
+            "Content-Type": "image/png",
+          },
+          body: buffer.toString("base64"),
+          isBase64Encoded: true,
+        });
+        return;
+      } else {
+        buffer = result;
+      }
+    } else {
+      const gif = event.path.split("/").pop();
+      const gifurl = await fetch(`https://tenor.com/view/${gif}`);
+      const resultText = await gifurl.text();
+      const resultGifList = resultText.match(
+        /https:\/\/media.tenor.com\/[a-z0-9]+/i
+      );
+      if (!resultGifList) {
+        const notFound = await fetch("https://tencuter.com/assets/img/404.png");
+        const buffer = await notFound.buffer();
+        callback(null, {
+          statusCode: 404,
+          headers: {
+            "Content-Type": "image/png",
+          },
+          body: buffer.toString("base64"),
+          isBase64Encoded: true,
+        });
+      }
+      const resultGif = resultGifList[0];
+      const result = await fetch(resultGif);
+      buffer = await result.buffer();
     }
-    const resultGif = resultGifList[0];
-    const result = await fetch(resultGif);
-    const buffer = await result.buffer();
     const arrayBuffer = new Uint8Array(buffer).buffer;
     const info = gifInfo(arrayBuffer);
     const fps = info.images.length / (info.duration / 1000);

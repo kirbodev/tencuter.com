@@ -79,7 +79,12 @@ These commands are still being worked on, are not released and may not be releas
 ### s/view/blur
 Returns your gif with a blur effect.
 
-Hopefully I'll be able to buy disccuterdapp.com soon so that this will work with any gif.
+### s/discordapp.net/tencuter.com
+This command is used to replace discordapp.net with tencuter.com in the link. This is used to make the commands work with any gif.  
+
+<br>
+
+Hopefully I'll be able to buy disccuterdapp.net soon so that this will work with any gif.
 
 #### Ask for a command in issues or submit your own with a pull request! 
 
