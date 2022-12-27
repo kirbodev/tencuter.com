@@ -28,7 +28,7 @@ module.exports.handler = async (event, context, callback) => {
     let buffer;
     if (event.headers.host.split(".")[0] === "media") {
       // Change media.tencuter.com to media.discordapp.net
-      const media = event.path;
+      const media = event.path.replace("/.netlify/functions/blurple", "/attachments");
       const mediaurl = await fetch(`https://media.discordapp.net${media}`);
       const result = await mediaurl.buffer();
       if (mediaurl.status === 401 || mediaurl.status === 404 || !result) {
