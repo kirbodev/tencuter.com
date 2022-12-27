@@ -9,40 +9,40 @@ functions = "functions/"
 # force = true
 
 [[redirects]]
-from = "/view/:splat"
+from = "/view/*"
 to = "/.netlify/functions/view/:splat"
 
 [[redirects]]
-from = "/dog/:splat"
+from = "/dog/*"
 to = "/.netlify/functions/dog/:splat"
 
 [[redirects]]
-from = "/cat/:splat"
+from = "/cat/*"
 to = "/.netlify/functions/cat/:splat"
 
 [[redirects]]
-from = "/deepfry/:splat"
+from = "/deepfry/*"
 to = "/.netlify/functions/deepfry/:splat"
 
 [[redirects]]
-from = "/what/:splat"
+from = "/what/*"
 to = "/.netlify/functions/what/:splat"
 
 [[redirects]]
-from = "/caption/:splat/:id"
-to = "/.netlify/functions/caption/:splat/:id"
-
-[[redirects]]
-from = "/caption/:splat"
+from = "/caption/*"
 to = "/.netlify/functions/caption/:splat"
 
 [[redirects]]
-from = "/meme/:splat"
+from = "/meme/*"
 to = "/.netlify/functions/meme/:splat"
 
 [[redirects]]
-from = "/pe/:splat"
+from = "/pe/*"
 to = "/.netlify/functions/pe/:splat"
+
+[[redirects]]
+from = "/blurple/*"
+to = "/.netlify/functions/blurple/:splat"
 
 [[redirects]]
 from = "/attachments/*"
