@@ -44,10 +44,6 @@ to = "/.netlify/functions/pe/:splat"
 from = "/blurple/*"
 to = "/.netlify/functions/blurple/:splat"
 
-[[redirects]]
-from = "/attachments/*"
-to = "/.netlify/functions/attachments/:splat"
-
 [[headers]]
 for = "/deepfry/*"
 [headers.values]
