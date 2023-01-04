@@ -1,0 +1,472 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "Uni Sans";
+  src: url("/assets/fonts/UniSansHeavyCaps.otf");
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.unisans {
+  font-family: "Uni Sans", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.delagothic {
+  font-family: "Dela Gothic One", cursive;
+}
+
+/* Variables */
+
+:root {
+  --clr-main: rgb(2, 0, 15);
+  --clr-secondary: rgb(110, 134, 201);
+  --clr-light: rgb(238, 238, 255);
+  --clr-dark: rgb(30, 30, 37);
+  --clr-accent: rgb(52, 46, 77);
+  --clr-accent-2: rgb(82, 76, 107);
+}
+
+/* Colors */
+
+.color-rainbow {
+  background-image: linear-gradient(
+    270deg,
+    rgba(224, 166, 20, 1) 0%,
+    rgba(210, 67, 151, 1) 50%,
+    rgba(28, 151, 215, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: filter 0.25s ease;
+}
+
+.color-rainbow:hover {
+  filter: brightness(1.2);
+  transition: filter 0.25s ease;
+}
+
+.color-gray {
+  background-image: linear-gradient(
+    180deg,
+    rgb(128, 128, 128) 0%,
+    rgb(218, 218, 218) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.color-green {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 255, 0, 0.8) 0%,
+    rgba(0, 128, 0, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* General */
+
+body {
+  background: var(--clr-main) !important;
+  color: var(--clr-light) !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  scroll-behavior: auto !important;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.navbar {
+  z-index: 100;
+  height: 50px;
+  background: var(--clr-accent) / 0.8;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+  margin-right: 8px;
+}
+
+.nav-logo {
+  height: 50px;
+}
+
+.fa-nav {
+  font-size: 16px;
+  color: var(--clr-light);
+}
+
+.fa-bars {
+  color: var(--clr-light) !important;
+}
+
+.link-mail .fa-envelope {
+  transition: color 0.5s ease;
+}
+
+.link-mail:hover .fa-envelope {
+  color: rgba(238, 63, 63, 0.8);
+  transition: color 0.5s ease;
+}
+
+.link-discord .fa-discord {
+  transition: color 0.5s ease;
+}
+
+.link-discord:hover .fa-discord {
+  color: #7289da;
+  transition: color 0.5s ease;
+}
+
+.link-github .fa-github {
+  transition: color 0.5s ease;
+}
+
+.link-github:hover .fa-github {
+  color: #6e5494;
+  transition: color 0.5s ease;
+}
+
+#sidebar {
+  background-color: var(--clr-main);
+  color: rgba(238, 238, 255, 0.8);
+  border-right: 2px solid rgb(22, 20, 35);
+}
+
+#sidebar .offcanvas-header {
+  background-color: rgb(12, 10, 25);
+  border-bottom: 2px solid rgb(22, 20, 35);
+}
+
+#sidebar .offcanvas-bottom {
+  background-color: rgb(12, 10, 25);
+  border-top: 2px solid rgb(22, 20, 35);
+}
+
+#sidebar .close-offcanvas {
+  color: rgba(238, 238, 255, 0.8);
+}
+
+#blue-accent {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    var(--clr-accent-2),
+    rgba(0, 0, 0, 0)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#blue-accent-2 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    var(--clr-accent-2) -50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  position: absolute;
+  z-index: -1;
+}
+
+#blue-accent-3 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    var(--clr-accent-2) -50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  position: absolute;
+  z-index: -1;
+}
+
+#blue-accent-4 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    var(--clr-accent-2) -50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  position: absolute;
+  z-index: -1;
+}
+
+#hero-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-pretitle {
+  font-size: calc(1.5rem + 1.5vw);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: down 1s ease forwards 300ms;
+}
+
+#hero-subtitle {
+  font-size: calc(1rem + 1vw);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: down 1s ease 1000ms forwards;
+}
+
+.hero-subtitle-decor {
+  color: rgba(255, 255, 255, 0.6);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#hero-title {
+  font-size: calc(2.5rem + 7vw);
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 600;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: down 1s ease 600ms forwards;
+}
+
+.subheading {
+  font-size: calc(1.5rem + 1vw);
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 700;
+}
+
+.subdescription {
+  font-size: calc(0.75rem + 0.75vw);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gif {
+  width: 40%;
+  height: 40%;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+#command-search {
+  background-color: var(--clr-dark);
+  color: rgba(238, 238, 255, 0.8);
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+#command-search::placeholder {
+  color: rgba(238, 238, 255, 0.5);
+  font-family: "Montserrat", sans-serif;
+}
+
+.command-card {
+  position: relative;
+  background-color: rgb(45, 45, 52) !important;
+}
+
+.command-card > div::before {
+  content: "";
+  background: radial-gradient(
+    circle 300px at var(--x) var(--y),
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.command-card:hover > div::before {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.command-card > div {
+  background-color: rgb(30, 30, 37);
+  border-radius: inherit;
+  color: rgba(238, 238, 255, 0.8);
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  z-index: 2;
+}
+
+.command-card::before {
+  content: "";
+  background: radial-gradient(
+    circle 300px at var(--x) var(--y),
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#command-list:hover > div > div::before {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#wip-command-list:hover > div > div::before {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#command-socute > div {
+  background-color: rgba(224, 176, 20, 0.705) !important;
+}
+
+.socute-prefix {
+  color: rgba(238, 238, 255, 0.6);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#no-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#no-results-icon {
+  font-size: 5rem;
+  color: rgba(238, 238, 255, 0.7);
+}
+
+.credits-card {
+  background-color: rgb(30, 30, 37) !important;
+  border-radius: 0.5rem;
+  color: rgba(238, 238, 255, 0.8);
+  border: 2px solid rgb(45, 45, 52) !important;
+}
+
+.fa-github {
+  color: #fff;
+}
+
+.fa-youtube {
+  color: #ff0000cc;
+}
+
+.kofi-card {
+  background-color: rgb(30, 30, 37) !important;
+  border-radius: 0.5rem;
+  color: rgba(238, 238, 255, 0.8) !important;
+  border: 2px solid #FF5E5Baa !important;
+  transition: filter 0.5s ease;
+}
+
+.kofi-card:hover {
+  filter: brightness(1.2);
+  transition: filter 0.5s ease;
+}
+
+.kofi-link {
+  color: rgba(238, 238, 255, 0.8) !important;
+}
+
+.img-kofi {
+  width: 5rem;
+  height: 5rem;
+}
+
+footer {
+  background-color: rgb(15 15, 22);
+  color: rgba(238, 238, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  border-top: 2px solid var(--clr-dark);
+}
+
+/* Keyframes */
+
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 500px) {
+  .gif {
+    width: 80%;
+    height: 80%;
+  }
+
+  #hero-title {
+    font-size: calc(2.5rem + 3vw);
+  }
+
+  #hero-pretitle {
+    font-size: calc(1.5rem + 0.5vw);
+  }
+
+  #hero-subtitle {
+    font-size: calc(1rem + 0.5vw);
+  }
+
+  .navbar ul.nav {
+    display: none;
+  }
+}

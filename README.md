@@ -5,6 +5,7 @@ An image manipulation tool that works on tenor gifs. The discord "universal bot"
   - [How does it work?](#how-does-it-work)
   - [Commands](#commands)
   - - [WIP Commands](#work-in-progress-commands)
+  - [Credits](#credits)
 ## What is this?
 s/o/cute is an image manipulation tool for Discord. It is written fully in Node.js and uses a mixture of node-canvas and sharp to manipulate images. s/o/cute is **not** a bot, it uses the discord substitute command to produce different images.
 
@@ -78,6 +79,27 @@ Returns a short description of what s/o/cute is.
 These commands are still being worked on, are not released and may not be released at all.
 ### s/view/blur
 Returns your gif with a blur effect.
+
+### s/view/8ball
+Returns what the 8ball says.
+
+### s/view/triggered
+Returns a triggered version of your gif.
+
+### s/view/color
+Returns a random color.
+
+### s/view/flip
+Returns your gif flipped horizontally.
+
+### s/view/flipv
+Returns your gif flipped vertically.
+
+### s/view/changelog
+Returns the changelog.
+
+### s/view/invert
+Returns your gif inverted.
 
 ### s/discordapp.net/tencuter.com
 This command is used to replace discordapp.net with tencuter.com in the link. This is used to make the commands work with any gif.  

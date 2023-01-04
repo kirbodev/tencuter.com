@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/82e22e0db2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="index.js" defer></script>
+    <title>kirbodev | s/o/cute</title>
+</head>
+
+<body>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title color-rainbow delagothic">s/o/cute</h5>
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="bg-transparent border-0"><i class="fas fa-x close-offcanvas"></i></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled unisans text-center">
+                <li>
+                    <a href="#hero-container" class="nav-link">Home</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#section-1" class="nav-link">Features</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#commands" class="nav-link">Commands</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#credits" class="nav-link">Credits</a>
+                </li>
+            </ul>
+        </div>
+        <div class="offcanvas-bottom">
+            <ul class="list-unstyled d-flex justify-content-around mt-3 social-list">
+                <li class="nav-item">
+                    <a class="nav-link link-mail" href="https://kirbodev.com/#contact" target="_blank" rel="noopener"><i
+                            class="fa-nav fa-solid fa-envelope"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-discord" href="https://kirbodev.com/#contact" target="_blank"
+                        rel="noopener"><i class="fa-nav fa-brands fa-discord"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-github" href="https://github.com/kirbodev/tencuter.com#readme"
+                        target="_blank" rel="noopener"><i class="fa-nav fa-brands fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar position-fixed w-100">
+        <div class="container-fluid">
+            <div class="nav-menu-bars">
+                <a class="text-decoration-none" data-bs-toggle="offcanvas" href="#sidebar" role="button"
+                    aria-controls="sidebar">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+            <div class="navbar-brand position-absolute start-50 translate-middle-x">
+                <a href="#">
+                    <img src="/assets/img/logo.png" alt="logo" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav position-absolute end-0">
+                <li class="nav-item">
+                    <a class="nav-link link-mail" href="https://kirbodev.com/#contact" target="_blank" rel="noopener"><i
+                            class="fa-nav fa-solid fa-envelope"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-discord" href="https://kirbodev.com/#contact" target="_blank"
+                        rel="noopener"><i class="fa-nav fa-brands fa-discord"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-github" href="https://github.com/kirbodev/tencuter.com#readme"
+                        target="_blank" rel="noopener"><i class="fa-nav fa-brands fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="blue-accent"></div>
+    <main id="hero-container">
+        <h2 id="hero-pretitle">Welcome to</h2>
+        <h1 id="hero-title" class="color-rainbow">s/o/cute</h1>
+        <h2 id="hero-subtitle"><span class="hero-subtitle-decor">-</span> the universal discord bot <span
+                class="hero-subtitle-decor">-</span></h2>
+    </main>
+    <section id="section-1" class="container d-flex flex-column align-items-center position-relative mb-5 pb-5">
+        <h2 class="subheading color-gray text-center">The discord 'bot' that's not a bot</h2>
+        <p class="text-center subdescription"><strong class="color-rainbow montserrat">s/o/cute</strong> <span
+                class="montserrat">takes advantage of the discord substitute command feature to allow
+                you to use commands without the need for a bot. This means that you can use the commands in any server,
+                without
+                the need for a bot to be added to the server.</span></p>
+        <div id="blue-accent-2"></div>
+        <img src="/assets/img/socute1.gif" alt="socute" class="img-fluid gif">
+    </section>
+    <section id="section-2" class="container d-flex flex-column align-items-center position-relative mb-5 pb-5">
+        <h2 class="subheading color-gray text-center">Advanced Image Manipulation</h2>
+        <p class="text-center subdescription"><strong class="color-rainbow montserrat">s/o/cute</strong> <span
+                class="montserrat">has a wide range of image manipulation commands, such as adding text, changing the
+                color of an image, and more.</span>
+        </p>
+        <div id="blue-accent-3"></div>
+        <img src="/assets/img/socute2.gif" alt="socute" class="img-fluid gif">
+    </section>
+    <section id="section-3" class="container d-flex flex-column align-items-center position-relative mb-5 pb-5">
+        <h2 class="subheading color-gray text-center">Fun Commands</h2>
+        <p class="text-center subdescription"><strong class="color-rainbow montserrat">s/o/cute</strong> <span
+                class="montserrat">has a lot of fun commands, such as a meme command, commands to get random animal
+                pictures, and more.</span>
+        </p>
+        <div id="blue-accent-4"></div>
+        <img src="/assets/img/socute3.gif" alt="socute" class="img-fluid gif">
+    </section>
+    <section id="commands" class="container position-relative">
+        <h2 class="subheading color-gray">Commands</h2>
+        <p class="subdescription"><span class="montserrat">Use the search bar to
+                find a specific command.</span>
+        </p>
+        <div class="input-group mb-4">
+            <input id="command-search" type="text" class="form-control shadow-none" placeholder="Search for a command"
+                aria-label="Search for a command">
+        </div>
+        <div id="command-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 mb-4">
+            <div class="col command-card-parent" id="command-socute">
+                <div class="command-card card h-100">
+                    <div class="card-body poppins">
+                        <h5 class="card-title">s/o/cute</h5>
+                        <p class="card-text">Send this command before any other command.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="no-results" class="d-none my-4">
+            <i id="no-results-icon" class="fa-solid fa-face-dizzy"></i>
+            <h2 class="subheading color-gray">No Results</h2>
+            <p class="subdescription"><span class="montserrat">No commands were found that matched your search.</span>
+            </p>
+        </div>
+    </section>
+    <section id="wip-commands" class="container position-relative mt-5">
+        <h2 class="subheading color-gray text-end">WIP Commands</h2>
+        <p class="subdescription text-end"><span class="montserrat">These commands are still being worked on, are not
+                released and may not be released at all.</span>
+        </p>
+        <div id="wip-command-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 mb-4">
+        </div>
+    </section>
+    <section id="credits" class="container position-relative mt-5 d-flex flex-column align-items-center">
+        <h2 class="subheading color-gray">Credits</h2>
+        <p class="subdescription text-center"><span class="montserrat">These are the projects that <strong
+                    class="color-rainbow">s/o/cute</strong> uses.</span>
+        <div id="credits-list" class="row row-cols-1 g-3 w-100">
+            <div class="col-12">
+                <div class="card credits-card h-100">
+                    <div class="card-body poppins mx-auto text-center">
+                        <h5 class="card-title">node-canvas</h5>
+                        <p class="card-text">Advanced image manipulation</p>
+                        <a href="https://github.com/Automattic/node-canvas" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card credits-card h-100">
+                    <div class="card-body poppins mx-auto text-center">
+                        <h5 class="card-title">canvas-gif</h5>
+                        <p class="card-text">Gif manipulation for node-canvas</p>
+                        <a href="https://github.com/newtykins/canvas-gif" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card credits-card h-100">
+                    <div class="card-body poppins mx-auto text-center">
+                        <h5 class="card-title">sharp</h5>
+                        <p class="card-text">Fast image manipulation</p>
+                        <a href="https://github.com/lovell/sharp" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card credits-card h-100">
+                    <div class="card-body poppins mx-auto text-center">
+                        <h5 class="card-title">txnor-server</h5>
+                        <p class="card-text">The inspiration for this project, aka the discord s/e/x hack</p>
+                        <a href="https://github.com/rebane2001/txnor-server" target="_blank" rel="noopener noreferrer"
+                            class="me-2"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.youtube.com/watch?v=km8CR-fdB7o" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card credits-card h-100">
+                    <div class="card-body poppins mx-auto text-center">
+                        <h5 class="card-title">esmBot</h5>
+                        <p class="card-text">Further inspiration for this project</p>
+                        <a href="https://github.com/esmBot/esmBot" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card credits-card h-100">
+                    <div class="card-body poppins mx-auto text-center">
+                        <h5 class="card-title">NTTS</h5>
+                        <p class="card-text">Bringing my attention to the discord s/e/x hack</p>
+                        <a href="https://youtube.com/notexttospeech" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="donate" class="container position-relative mt-5 d-flex flex-column align-items-center mb-5">
+        <h2 class="subheading color-green">Donate</h2>
+        <p class="subdescription"><span class="montserrat">If you would like to support the development of <strong
+                    class="color-rainbow">s/o/cute</strong>, or just like my work, you can donate here:</span>
+        <div class="col-12">
+            <div class="card kofi-card h-100">
+                <a href="https://ko-fi.com/kirbodev" target="_blank" rel="noopener noreferrer"
+                    class="text-decoration-none kofi-link">
+                    <div class="card-body poppins mx-auto text-center">
+                        <img src="https://storage.ko-fi.com/cdn/brandasset/kofi_s_logo_nolabel.png" class="img-kofi"
+                            alt="ko-fi logo">
+                        <h5 class="card-title">ko-fi</h5>
+                        <p class="card-text">Buy me a coffee.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="col-12">
+        <div class="container d-flex flex-column align-items-center pt-3 text-center">
+            <p class="fs-6"><span class="montserrat">Made with <i class="fa-solid fa-heart"></i> by <a
+                        href="https://kirbodev.com/" target="_blank" rel="noopener noreferrer"
+                        class="link-secondary text-decoration-none">kirbodev</a></span>
+            <p class="fs-6"><span class="montserrat
+                ">This project is not affiliated with Discord or any of its partners.</span>
+            <p class="fs-6"><span class="montserrat
+                    ">This project is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+                        target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary">GNU
+                        GPL-3.0</a> license. Find the open-source code on <a
+                        href="https://github.com/kirbodev/tencuter.com" target="_blank" rel="noopener noreferrer"
+                        class="link-secondary text-decoration-none">Github</a>.</span>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
