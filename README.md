@@ -69,6 +69,8 @@ Returns your gif with the text you provided as a caption.
 Returns your gif with the "Are you sure you want to delete this?" overlay.
 ### s/view/blurple
 Returns a blurpified version of your gif. (Thanks, [Blurple Project](https://github.com/project-blurple))
+### s/view/blur
+Returns your gif with a blur effect.
 ### s/view/what
 Returns a short description of what s/o/cute is.
 
@@ -77,8 +79,6 @@ Returns a short description of what s/o/cute is.
 ## Work in progress commands
 
 These commands are still being worked on, are not released and may not be released at all.
-### s/view/blur
-Returns your gif with a blur effect.
 
 ### s/view/8ball
 Returns what the 8ball says.
@@ -104,11 +104,17 @@ Returns your gif inverted.
 ### s/discordapp.net/tencuter.com
 This command is used to replace discordapp.net with tencuter.com in the link. This is used to make the commands work with any gif.  
 
-<br>
+## Upcoming features
+- [ ] Port everything to express.js
+- [ ] Make the commands work with any gif
+- [ ] Send images in embeds to show more information
+- [ ] Short links to share results with friends
 
 Hopefully I'll be able to buy disccuterdapp.net soon so that this will work with any gif.
 
-#### Ask for a command in issues or submit your own with a pull request! 
+---
+
+#### Ask for a command/feature in issues or submit your own with a pull request! 
 
 ---
 
