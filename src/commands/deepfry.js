@@ -1,59 +1,60 @@
-const fetch = require("isomorphic-fetch");
+const fetch = require("node-fetch");
 const cgif = require("canvas-gif");
 const gifInfo = require("gif-info");
+const getGif = require("../../tools/getGif");
+const express = require("express");
+const db = require("../db/db");
 
-module.exports.handler = async (event, context, callback) => {
-  try {
-    // Deepfry the image
-    const gif = event.path.split("/").pop();
-    const gifurl = await fetch(`https://tenor.com/view/${gif}`);
-    const resultText = await gifurl.text();
-    const resultGifList = resultText.match(
-      /https:\/\/media.tenor.com\/[a-z0-9]+/i
-    );
-    if (!resultGifList) {
-      const notFound = await fetch("https://tencuter.com/assets/img/404.png");
-      const buffer = await notFound.buffer();
-      callback(null, {
-        statusCode: 404,
-        headers: {
+module.exports = {
+  name: "deepfry",
+  /**
+   *
+   * @param {express.Request} req
+   * @param {express.Response} res
+   * @param {express.NextFunction} next
+   */
+  handler: async (req, res, next) => {
+    try {
+      const gif = req.url.split("/").pop();
+      if (await db.get(`deepfry-${gif}`)) {
+        const gifdata = await db.get(`deepfry-${gif}`);
+        const buffer = Buffer.from(gifdata, "base64");
+        res.writeHead(200, {
           "Content-Type": "image/png",
-        },
-        body: buffer.toString("base64"),
-        isBase64Encoded: true,
-      });
-    }
-    const resultGif = resultGifList[0];
-    const result = await fetch(resultGif);
-    const buffer = await result.buffer();
-    const arrayBuffer = new Uint8Array(buffer).buffer;
-    const info = gifInfo(arrayBuffer);
-    const fps = info.images.length / (info.duration / 1000);
+          "Content-Length": buffer.length,
+        });
+        res.end(buffer);
+      } else {
+        const buffer = await getGif(`https://tenor.com/view/${gif}`);
+        if (!buffer) {
+          next("404");
+          return;
+        }
+        const arrayBuffer = new Uint8Array(buffer).buffer;
+        const info = gifInfo(arrayBuffer);
+        const fps = info.images.length / (info.duration / 1000);
 
-    cgif(buffer, deepfry, {
-      optimiser: true,
-      fps: fps,
-      quality: 50,
-    }).then((data) => {
-      callback(null, {
-        statusCode: 200,
-        headers: {
-          "Content-Type": "image/gif",
-        },
-        body: data.toString("base64"),
-        isBase64Encoded: true,
-      });
-    });
-  } catch (e) {
-    const imageAsHTML = require("../tools/HTMLImage");
-    callback(null, {
-      statusCode: 500,
-      headers: {
-        "Content-Type": "text/html",
-      },
-      body: imageAsHTML("https://tencuter.com/assets/img/500.png"),
-    });
-  }
+        cgif(buffer, deepfry, {
+          optimiser: true,
+          fps: fps,
+          quality: 50,
+        }).then((data) => {
+          db.set(`deepfry-${gif}`, {
+            name: `deepfry-${gif}`,
+            data: data,
+          });
+
+          res.writeHead(200, {
+            "Content-Type": "image/gif",
+            "Content-Length": data.length,
+          });
+          res.end(data);
+        });
+      }
+    } catch (e) {
+      next("500");
+    }
+  },
 };
 
 function deepfry(context, width, height, totalFrames, currentFrame) {

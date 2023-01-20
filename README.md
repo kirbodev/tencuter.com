@@ -1,5 +1,8 @@
-# Discord s/o/cute hack
-An image manipulation tool that works on tenor gifs. The discord "universal bot".
+<p align="center">
+<img src="https://tencuter.com/assets/img/logo.png" width="250">
+</p>
+
+### An image manipulation tool that works on tenor gifs. The discord "universal bot".
 ## Table of Contents
   - [What is this?](#what-is-this)
   - [How does it work?](#how-does-it-work)
@@ -71,6 +74,8 @@ Returns your gif with the "Are you sure you want to delete this?" overlay.
 Returns a blurpified version of your gif. (Thanks, [Blurple Project](https://github.com/project-blurple))
 ### s/view/blur
 Returns your gif with a blur effect.
+### s/view/8ball
+Returns what the 8ball says.
 ### s/view/what
 Returns a short description of what s/o/cute is.
 
@@ -79,9 +84,6 @@ Returns a short description of what s/o/cute is.
 ## Work in progress commands
 
 These commands are still being worked on, are not released and may not be released at all.
-
-### s/view/8ball
-Returns what the 8ball says.
 
 ### s/view/triggered
 Returns a triggered version of your gif.
@@ -105,10 +107,11 @@ Returns your gif inverted.
 This command is used to replace discordapp.net with tencuter.com in the link. This is used to make the commands work with any gif.  
 
 ## Upcoming features
-- [ ] Port everything to express.js
-- [ ] Make the commands work with any gif
-- [ ] Send images in embeds to show more information
-- [ ] Short links to share results with friends
+- [x] Port everything to express.js
+- [x] Send images in embeds to show more information
+- [x] Short links to share results with friends
+- [x] Create error pages
+- [ ] Make the commands work with discordapp.net links
 
 Hopefully I'll be able to buy disccuterdapp.net soon so that this will work with any gif.
 

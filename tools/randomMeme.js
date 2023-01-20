@@ -1,4 +1,4 @@
-const fetch = require("isomorphic-fetch");
+const fetch = require("node-fetch");
 
 async function randomMeme() {
     const meme = await fetch("https://reddit.com/r/memes/random/.json");
@@ -9,7 +9,7 @@ async function randomMeme() {
     const memeImage = await fetch(memeUrl);
     const memeBuffer = await memeImage.buffer();
 
-    return memeBuffer.toString("base64");
+    return {buffer: memeBuffer.toString("base64"), url: memeUrl};
 }
 
 module.exports = randomMeme;

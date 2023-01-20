@@ -1,0 +1,144 @@
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Uni Sans";
+  src: url("/assets/fonts/UniSansHeavyCaps.otf");
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.unisans {
+  font-family: "Uni Sans", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.delagothic {
+  font-family: "Dela Gothic One", cursive;
+}
+
+/* Variables */
+
+:root {
+  --clr-main: rgb(2, 0, 15);
+  --clr-secondary: rgb(110, 134, 201);
+  --clr-light: rgb(238, 238, 255);
+  --clr-dark: rgb(30, 30, 37);
+  --clr-accent: rgb(52, 46, 77);
+  --clr-accent-2: rgb(82, 76, 107);
+}
+
+/* Colors */
+
+.color-rainbow {
+  background-image: linear-gradient(
+    270deg,
+    rgba(224, 166, 20, 1) 0%,
+    rgba(210, 67, 151, 1) 50%,
+    rgba(28, 151, 215, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: filter 0.25s ease;
+}
+
+.color-rainbow:hover {
+  filter: brightness(1.2);
+  transition: filter 0.25s ease;
+}
+
+.color-gray {
+  background-image: linear-gradient(
+    180deg,
+    rgb(128, 128, 128) 0%,
+    rgb(218, 218, 218) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.color-green {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 255, 0, 0.8) 0%,
+    rgba(0, 128, 0, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.color-red {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 0, 0, 0.8) 0%,
+    rgba(128, 0, 0, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* General */
+
+body {
+  background: var(--clr-main) !important;
+  color: var(--clr-light) !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  scroll-behavior: auto !important;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+#blue-accent {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    var(--clr-accent-2),
+    rgba(0, 0, 0, 0)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.goback-btn {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: var(--clr-accent);
+    color: rgba(238, 238, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: "Uni Sans", sans-serif;
+    margin: 5px;
+    transition: all 0.25s ease;
+}
+
+.goback-btn:hover {
+    background-color: rgb(62, 56, 87);
+    color: rgba(238, 238, 255, 0.9);
+    transition: all 0.25s ease;
+}

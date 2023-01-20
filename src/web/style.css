@@ -319,6 +319,7 @@ img {
   z-index: 2;
   opacity: 0;
   transition: opacity 0.5s ease;
+  pointer-events: none;
 }
 
 .command-card:hover > div::before {
@@ -351,6 +352,7 @@ img {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s ease;
+  pointer-events: none;
 }
 
 #command-list:hover > div > div::before {

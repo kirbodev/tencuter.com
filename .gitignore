@@ -1,4 +1,7 @@
-# Local Netlify folder
-.netlify
 node_modules
 .vscode
+.env
+src/db/cache
+src/db/db.json
+src/db/kvdb.json
+src/ssl/*
