@@ -76,11 +76,13 @@ const commands = [
   {
     name: "blur",
     description: "Returns your gif with a blur effect.",
+    tags: [],
     keywords: ["blur", "image", "gif"],
   },
   {
     name: "8ball",
     description: "Returns what the 8ball says.",
+    tags: [],
     keywords: ["8ball", "fun", "magic"],
   },
   {
