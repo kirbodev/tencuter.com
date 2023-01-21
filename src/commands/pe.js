@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const fs = require("fs");
 const express = require("express");
 
 module.exports = {
@@ -12,14 +12,13 @@ module.exports = {
    */
   handler: async (req, res, next) => {
     try {
-      const result = await fetch("https://i.ibb.co/5RM3S6T/pe-1.png");
-      const buffer = await result.buffer();
+      const mainBuffer = await fs.promises.readFile("./src/assets/img/pe.png");
 
       res.writeHead(200, {
         "Content-Type": "image/png",
-        "Content-Length": buffer.length,
+        "Content-Length": mainBuffer.length,
       });
-      res.end(buffer);
+      res.end(mainBuffer);
     } catch (e) {
       next("500");
     }

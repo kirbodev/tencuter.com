@@ -115,8 +115,6 @@ This command is used to replace discordapp.net with tencuter.com in the link. Th
 
 Hopefully I'll be able to buy disccuterdapp.net soon so that this will work with any gif.
 
-Note to self: Update /view/ image to show the new commands.
-
 ---
 
 #### Ask for a command/feature in issues or submit your own with a pull request! 
