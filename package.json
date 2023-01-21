@@ -30,6 +30,6 @@
     "zlib": "^1.0.5"
   },
   "devDependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^5.2.0"
   }
 }
