@@ -51,27 +51,6 @@ app.get("/s/:hash", (req, res) => {
     .send("Looks like you tried to access a short URL that doesn't exist.");
 });
 
-app.use((err, req, res, next) => {
-  if (err === "401") {
-    res.status(401).sendFile(path.join(__dirname, "errors", "401.html"));
-    return;
-  } else if (err === "404") {
-    res.status(404).sendFile(path.join(__dirname, "errors", "404.html"));
-    return;
-  } else if (err === "415") {
-    res.status(415).sendFile(path.join(__dirname, "errors", "415.html"));
-    return;
-  } else if (err === "500") {
-    res.status(500).sendFile(path.join(__dirname, "errors", "500.html"));
-    return;
-  } else if (err === "503") {
-    res.status(503).sendFile(path.join(__dirname, "errors", "503.html"));
-    return;
-  } else {
-    res.status(500).sendFile(path.join(__dirname, "errors", "500.html"));
-  }
-});
-
 app.all("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "errors", "404.html"));
 });
