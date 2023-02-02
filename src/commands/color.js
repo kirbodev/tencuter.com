@@ -27,13 +27,10 @@ module.exports = {
         color = randomColor();
       }
 
-      console.log(color);
-
       kvDB.set(`color-${hash}`, color);
 
       const result = await fetch(`https://www.thecolorapi.com/id?hex=${color}`);
       const resultJSON = await result.json();
-      console.log(resultJSON);
       const embed = createEmbed({
         title: `Color | ${color}`,
         author: {

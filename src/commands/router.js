@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const chalk = require("chalk");
+const rdb = require("../data/index");
 const path = require("path");
 const fs = require("fs");
 const { promisify } = require("util");
@@ -49,7 +50,15 @@ require("dotenv").config();
     if (!commandName || !commandHandler) {
       continue;
     }
-    router.use(`/api/${commandName}`, commandHandler);
+    router.use(`/api/${commandName}`, async (req, res, next) => {
+      commandHandler(req, res, next);
+      const uses = await rdb.get(`uses-${commandName}`);
+      if (!uses) {
+        rdb.set(`uses-${commandName}`, 1);
+      } else {
+        rdb.set(`uses-${commandName}`, parseInt(uses) + 1);
+      }
+    });
     console.log(`${chalk.bold(chalk.green("Command:"))} ${commandName} loaded`);
 
     if (commandFile.imgOnly) {

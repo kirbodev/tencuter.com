@@ -122,23 +122,42 @@ img {
   z-index: -1;
 }
 
+.subheading {
+  font-size: calc(1.5rem + 1vw);
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 700;
+}
+
 .goback-btn {
-    display: inline-block;
-    vertical-align: middle;
-    background-color: var(--clr-accent);
-    color: rgba(238, 238, 255, 0.8);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-family: "Uni Sans", sans-serif;
-    margin: 5px;
-    transition: all 0.25s ease;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: var(--clr-accent);
+  color: rgba(238, 238, 255, 0.8);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family: "Uni Sans", sans-serif;
+  margin: 5px;
+  transition: all 0.25s ease;
 }
 
 .goback-btn:hover {
-    background-color: rgb(62, 56, 87);
-    color: rgba(238, 238, 255, 0.9);
-    transition: all 0.25s ease;
+  background-color: rgb(62, 56, 87);
+  color: rgba(238, 238, 255, 0.9);
+  transition: all 0.25s ease;
+}
+
+#hero-title {
+  font-size: calc(2rem + 5vw);
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+#hero-subtitle {
+  font-size: calc(0.7rem + 1vw);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }

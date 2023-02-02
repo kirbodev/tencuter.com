@@ -1,6 +1,6 @@
 {
   "name": "tencuter.com",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "The universal discord bot.",
   "main": "src/index.js",
   "repository": {
@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/kirbodev/tencuter.com#readme",
   "dependencies": {
+    "async-redis": "^2.0.0",
     "body-parser": "^1.20.1",
     "canvas": "^2.11.0",
     "canvas-gif": "^1.0.3",
@@ -24,6 +25,7 @@
     "imagemin-gifsicle": "^7.0.0",
     "jimp": "^0.16.2",
     "jsdom": "^21.1.0",
+    "redis": "^4.6.2",
     "sharp": "^0.31.3",
     "stackblur-canvas": "^2.5.0",
     "zlib": "^1.0.5"

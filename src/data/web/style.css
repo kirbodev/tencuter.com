@@ -1,0 +1,22 @@
+#hero-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    width: fit-content;
+}
+
+.statname {
+    color: rgba(238, 238, 255, 0.8);
+}
+
+.statname > span {
+    color: rgb(238, 238, 255);
+}
+
+.commandname {
+    font-weight: 600;
+}

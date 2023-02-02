@@ -128,22 +128,6 @@ Returns a random color.
 
 These commands are still being worked on, are not released and may not be released at all.
 
-### s/view/triggered
-
-Returns a triggered version of your gif.
-
-### s/view/flip
-
-Returns your gif flipped horizontally.
-
-### s/view/flipv
-
-Returns your gif flipped vertically.
-
-### s/view/changelog
-
-Returns the changelog.
-
 ### s/view/invert
 
 Returns your gif inverted.

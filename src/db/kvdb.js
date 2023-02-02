@@ -46,6 +46,22 @@ class kvDB {
     delete this.data[key];
     this.save();
   }
+
+  all(pattern) {
+    this.load();
+    if (pattern) {
+      const regex = new RegExp(pattern);
+      const data = {};
+      for (const key in this.data) {
+        if (regex.test(key)) {
+          data[key] = this.data[key];
+        }
+      }
+      return data;
+    } else {
+      return this.data;
+    }
+  }
 }
 
 const db = new kvDB("kvdb", __dirname);
