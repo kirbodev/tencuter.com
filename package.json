@@ -23,7 +23,7 @@
     "gif-info": "^1.0.1",
     "imagemin": "^7.0.1",
     "imagemin-gifsicle": "^7.0.0",
-    "jimp": "^0.16.2",
+    "jimp": "^0.22.1",
     "jsdom": "^21.1.0",
     "redis": "^4.6.2",
     "sharp": "^0.31.3",
