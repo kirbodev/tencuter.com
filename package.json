@@ -15,7 +15,7 @@
   "homepage": "https://github.com/kirbodev/tencuter.com#readme",
   "dependencies": {
     "async-redis": "^2.0.0",
-    "body-parser": "^1.20.1",
+    "body-parser": "^1.20.2",
     "canvas": "^2.11.0",
     "canvas-gif": "^1.0.3",
     "dotenv": "^16.0.3",
