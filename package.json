@@ -25,7 +25,7 @@
     "imagemin-gifsicle": "^7.0.0",
     "jimp": "^0.16.2",
     "jsdom": "^21.1.0",
-    "redis": "^4.6.4",
+    "redis": "^4.6.5",
     "sharp": "^0.31.3",
     "stackblur-canvas": "^2.5.0",
     "zlib": "^1.0.5"
