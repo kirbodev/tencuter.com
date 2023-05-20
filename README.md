@@ -1,7 +1,4 @@
-<!-- markdownlint-disable no-inline-html first-line-h1 -->
-<p align="center">
-<img src="https://tencuter.com/assets/img/logo.png" width="250">
-</p>
+# ! s/o/cute has been shut down and is in an archive status due to high maintainance costs. Over the course of 3 months, it accumulated about 30k web visits and 300 command usages. Thank you to everyone who supported the project.
 
 ### An image manipulation tool that works on tenor gifs. The discord "universal bot"
 
